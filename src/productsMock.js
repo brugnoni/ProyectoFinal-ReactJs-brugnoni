@@ -1,0 +1,38 @@
+export const products = [
+  {
+    id: 1,
+    title: "HP Celeron IV",
+    price: 25000,
+    stock: 10,
+    description: "Compu de oficina que tira excel y chrome juntos",
+    category: "oficina",
+    img: "https://res.cloudinary.com/dmugld2v3/image/upload/v1678564902/istockphoto-1317827948-256x256_je6ncs.jpg",
+  },
+  {
+    id: 2,
+    title: "ASUS Pentium 4",
+    price: 34500,
+    stock: 7,
+    description: "Especial para jugar Candy Crush",
+    category: "oficina",
+    img: "https://res.cloudinary.com/dmugld2v3/image/upload/v1678564903/c9ac38ab1542485ce6f9e7b4c691b5e4--ibm-pc-home-computer_puce6h.jpg",
+  },
+  {
+    id: 3,
+    title: "Mega i-20 500gbRam GTX 4500 Ti Ultra HD Mega Gamer",
+    price: 190000,
+    stock: 2,
+    description: "Viene con manos incluidas",
+    category: "gamer",
+    img: "https://res.cloudinary.com/dmugld2v3/image/upload/v1678564903/gabinete-pc-gamer-rgb-acrilico-sp-cg-9900-ultra-gaming-luces-led-usb-30-loulan-sin-fuente-no-incluye-coolers_aczqdo.jpg",
+  },
+  {
+    id: 4,
+    title: "Deluxe Python God i-22 GTX 4090 KingKong 144Hz",
+    price: 250000,
+    stock: 5,
+    description: "El verdadero sueño del pibe",
+    category: "gamer",
+    img: "https://res.cloudinary.com/dmugld2v3/image/upload/v1678564903/5ff868a18350c4561e35aa03_bilrnn.jpg",
+  },
+];
