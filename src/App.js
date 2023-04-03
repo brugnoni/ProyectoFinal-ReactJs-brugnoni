@@ -5,24 +5,28 @@ import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 import Navbar from "./Components/Navbar/Navbar";
 import Form from "./Components/Form/Form";
 
+import CartContextProvider from "./context/CartContext";
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <CartContextProvider>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
 
-        <Route path="/category/:id" element={<ItemListContainer />} />
+          <Route path="/category/:id" element={<ItemListContainer />} />
 
-        <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} />
 
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
 
-        <Route path="/formulario" element={<Form />} />
+          <Route path="/formulario" element={<Form />} />
 
-        <Route path="*" element={<h1> Ingrese un URL válido </h1>} />
-      </Routes>
+          <Route path="*" element={<h1> Ingrese un URL válido </h1>} />
+        </Routes>
+      </CartContextProvider>
     </BrowserRouter>
   );
 }
