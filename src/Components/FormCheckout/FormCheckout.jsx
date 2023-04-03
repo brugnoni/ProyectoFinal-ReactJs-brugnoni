@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-
 import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
+import styles from "./FormCheckout.module.css";
 
 const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
   const [userData, setUserData] = useState({
@@ -16,7 +16,7 @@ const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
     e.preventDefault();
 
     // Validación del nombre
-    if (userData.name.length < 4 ){
+    if (userData.name.length < 4) {
       setError("Por favor, ingrese un nombre válido, mínimo 4 caracteres");
       return;
     }
@@ -29,7 +29,9 @@ const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
 
     // Validación del teléfono
     if (!/^\d+$/.test(userData.phone)) {
-      setError("Por favor, ingrese un número de teléfono válido, recuerde que solo puede contener números.");
+      setError(
+        "Por favor, ingrese un número de teléfono válido, recuerde que solo puede contener números."
+      );
       return;
     }
 
@@ -67,31 +69,36 @@ const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
   };
 
   return (
-    <div>
+    <div className={styles.form}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Nombre"
           value={userData.name}
           onChange={(e) => setUserData({ ...userData, name: e.target.value })}
+          className={styles.input}
         />
         <input
           type="text"
           placeholder="Email"
           value={userData.email}
           onChange={(e) => setUserData({ ...userData, email: e.target.value })}
+          className={styles.input}
         />
         <input
           type="text"
           placeholder="Telefono"
           value={userData.phone}
           onChange={(e) => setUserData({ ...userData, phone: e.target.value })}
+          className={styles.input}
         />
 
-        <button type="submit">Comprar</button>
+        <button type="submit" className={styles.button}>
+          Comprar
+        </button>
       </form>
 
-      {error && <p>{error}</p>}
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };

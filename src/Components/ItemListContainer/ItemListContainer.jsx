@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import ItemList from "../ItemList/ItemList";
-import PulseLoader from "react-spinners/PulseLoader";
 import { db } from "../../firebaseConfig";
-
-
+import { Button, CircularProgress } from "@mui/material";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
@@ -39,12 +36,7 @@ const ItemListContainer = () => {
   if (items.length === 0) {
     return (
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <PulseLoader
-          color={"#7F669D"}
-          size={50}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
+        <CircularProgress color="secondary" />
       </div>
     );
   }

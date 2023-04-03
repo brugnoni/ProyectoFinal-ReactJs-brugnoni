@@ -34,6 +34,28 @@
   align-items: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.order-id {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.link {
+  font-size: 1.2rem;
+}
+
 .cart-info {
   display: flex;
   flex-direction: column;

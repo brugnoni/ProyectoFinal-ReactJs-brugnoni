@@ -5,6 +5,8 @@ import "./Cart.css";
 import Swal from "sweetalert2";
 import FormCheckout from "../FormCheckout/FormCheckout";
 import { Link } from "react-router-dom";
+import styles from "./Confirmation.module.css";
+
 const Cart = () => {
   const { cart, clearCart, getTotalPrice, deleteProductById } =
     useContext(CartContext);
@@ -31,9 +33,13 @@ const Cart = () => {
 
   if (orderId) {
     return (
-      <div>
+      <div className={styles.orderId}>
         <h2>Gracias por su compra, lo esperamos pronto!</h2>
-        <h4>El comprobante es : {orderId} puedes utilizarlo para realizar tu seguimiento</h4>
+        <h4>
+          El comprobante es : {orderId} puedes utilizarlo para realizar tu
+          seguimiento
+        </h4>
+        <img src={"https://res.cloudinary.com/dmugld2v3/image/upload/v1680563195/12dfbc671cd53552dad98da3e5e036dc_udg1b4.jpg"} alt="Thank you" />
         <Link to="/">Seguir comprando</Link>
       </div>
     );
@@ -66,7 +72,6 @@ const Cart = () => {
           </div>
           <div className="cart-info">
             <h3>Precio: ${getTotalPrice()}</h3>
-            
 
             {cart.length > 0 && (
               <div className="btn-cart">
