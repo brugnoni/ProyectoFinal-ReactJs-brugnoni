@@ -65,7 +65,7 @@ const Cart = () => {
             })}
           </div>
           <div className="cart-info">
-            <h3>Precio: {getTotalPrice()}</h3>
+            <h3>Precio: ${getTotalPrice()}</h3>
             
 
             {cart.length > 0 && (
@@ -79,7 +79,7 @@ const Cart = () => {
               </div>
             )}
 
-            <h1>El total del carrito es ${getTotalPrice()}</h1>
+            <h1>El total es ${getTotalPrice()}</h1>
           </div>
         </div>
       ) : (

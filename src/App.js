@@ -3,9 +3,9 @@ import Cart from "./Components/Cart/Cart";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import Navbar from "./Components/Navbar/Navbar";
-import Form from "./Components/Form/Form";
 
 import CartContextProvider from "./context/CartContext";
+import FormCheckout from "./Components/FormCheckout/FormCheckout";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
 
           <Route path="/item/:id" element={<ItemDetailContainer />} />
 
-          <Route path="/formulario" element={<Form />} />
+          <Route path="/formulario" element={<FormCheckout />} />
 
           <Route path="*" element={<h1> Ingrese un URL válido </h1>} />
         </Routes>

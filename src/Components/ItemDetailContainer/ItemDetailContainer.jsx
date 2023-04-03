@@ -6,9 +6,9 @@ import { CartContext } from "../../context/CartContext";
 
 import ItemCount from "../ItemCount/ItemCount";
 
-import  "./ItemDetail.css";
+import styles from "./ItemDetail.module.css";
 
-import { getDoc, collection, doc } from "firebase/firestore"
+import { getDoc, collection, doc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 
 const ItemDetailContainer = () => {
@@ -16,22 +16,18 @@ const ItemDetailContainer = () => {
 
   const { agregarAlCarrito, getQuantityById } = useContext(CartContext);
 
-  const [productSelected, setProductSelected] = useState({})
+  const [productSelected, setProductSelected] = useState({});
 
-  useEffect(()=>{
-
-    const itemCollection = collection(db, "products")
-    const ref = doc( itemCollection, id )
-    getDoc(ref)
-      .then( res => {
-        setProductSelected({
-          ...res.data(),
-          id: res.id
-        })
-      })
-
-  },[id])
-
+  useEffect(() => {
+    const itemCollection = collection(db, "products");
+    const ref = doc(itemCollection, id);
+    getDoc(ref).then((res) => {
+      setProductSelected({
+        ...res.data(),
+        id: res.id,
+      });
+    });
+  }, [id]);
 
   const onAdd = (cantidad) => {
     let producto = {
@@ -41,24 +37,21 @@ const ItemDetailContainer = () => {
 
     agregarAlCarrito(producto);
     Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Producto agregado exitosamente',
+      position: "center",
+      icon: "success",
+      title: "Producto agregado exitosamente",
       showConfirmButton: false,
-      timer: 1500
-    })
+      timer: 1500,
+    });
   };
 
-  let quantity = getQuantityById(Number(id))
-  console.log(quantity)
-
   return (
-    <div className={"containerItemDetail"}>
-      <div className={"containerImage"}>
+    <div className={styles.containerItemDetail}>
+      <div className={styles.containerImage}>
         <img src={productSelected.img} alt="" />
       </div>
 
-      <div className={"containerDetail"}>
+      <div className={styles.containerDetail}>
         <h2 style={{ fontFamily: "monospace" }}>
           <span style={{ fontSize: "23px" }}>Nombre:</span>{" "}
           {productSelected.title}
@@ -72,7 +65,11 @@ const ItemDetailContainer = () => {
           {productSelected.price}.-
         </h2>
 
-        <ItemCount onAdd={onAdd} stock={productSelected.stock} initial={quantity} />
+        <ItemCount
+          onAdd={onAdd}
+          stock={productSelected.stock}
+          initial={getQuantityById(productSelected.id)}
+        />
       </div>
     </div>
   );
