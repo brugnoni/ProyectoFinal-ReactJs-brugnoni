@@ -2,7 +2,8 @@ Bienvenido a mi entrega final del proyecto de ReactJs en CoderHouse
 
 Para esta entrega hice uso de todas las herramientas aprendidas en el curso para realizar un Ecommerce de venta de computadoras
 
-Para instalación rapida del paquete debemos primero clonar el repositorio desde VisualStudioCode con el código ## git clone https://github.com/brugnoni/proyectofinalReactJs-brugnoni.git
+Para instalación rapida del paquete debemos primero clonar el repositorio desde VisualStudioCode con el código 
+## git clone https://github.com/brugnoni/proyectofinalReactJs-brugnoni.git
 
 Una vez dentro de la carpeta en el editor abrimos la terminal e instalamos el paquete de modulos
 ## npm install
