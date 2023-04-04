@@ -67,7 +67,7 @@ const Cart = () => {
                     <h2>Unidades: {item.quantity}</h2>
                     <Button
                       color="secondary"
-                      variant="contained"                    
+                      variant="contained"
                       onClick={() => deleteProductById(item.id)}
                     >
                       Quitar del carrito
@@ -78,8 +78,7 @@ const Cart = () => {
             })}
           </div>
           <div className="cart-info">
-            <h3>Precio: ${getTotalPrice()}</h3>
-
+            <h3>Precio total: ${getTotalPrice()}</h3>
             {cart.length > 0 && (
               <div className="btn-cart">
                 <Button
@@ -94,8 +93,6 @@ const Cart = () => {
                 </Button>
               </div>
             )}
-
-            <h1>El total es ${getTotalPrice()}</h1>
           </div>
         </div>
       ) : (
