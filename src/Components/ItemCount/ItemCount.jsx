@@ -38,7 +38,7 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
           <BsFillCartCheckFill
             style={{
               fontSize: "2rem",
-              color: "#e1d4c7",
+              color: "#eee",
             }}
           />
         </Button>

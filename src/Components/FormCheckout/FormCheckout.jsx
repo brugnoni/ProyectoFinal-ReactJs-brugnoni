@@ -15,19 +15,16 @@ const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validación del nombre
     if (userData.name.length < 4) {
       setError("Por favor, ingrese un nombre válido, mínimo 4 caracteres");
       return;
     }
 
-    // Validación del email
     if (!userData.email.includes("@")) {
       setError("Por favor, ingrese un email válido, recuerde utilizar @");
       return;
     }
 
-    // Validación del teléfono
     if (!/^\d+$/.test(userData.phone)) {
       setError(
         "Por favor, ingrese un número de teléfono válido, recuerde que solo puede contener números."
@@ -41,6 +38,7 @@ const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
       items: cart,
       total,
     };
+    
     let orderCollection = collection(db, "orders");
     addDoc(orderCollection, order)
       .then((res) => {

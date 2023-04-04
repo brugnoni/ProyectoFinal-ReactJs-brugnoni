@@ -17,7 +17,7 @@ const CartWidget = () => {
         <BsFillCartCheckFill
           style={{
             fontSize: "2rem",
-            color: "#e1d4c7",
+            color: "gfgfgf",
           }}
         />
         <div className="bubble-counter">
