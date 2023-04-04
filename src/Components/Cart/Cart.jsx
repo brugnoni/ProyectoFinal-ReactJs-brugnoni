@@ -5,7 +5,7 @@ import "./Cart.css";
 import Swal from "sweetalert2";
 import FormCheckout from "../FormCheckout/FormCheckout";
 import { Link } from "react-router-dom";
-import styles from "./Confirmation.module.css";
+import EmptyCart from "./EmptyCart";
 
 const Cart = () => {
   const { cart, clearCart, getTotalPrice, deleteProductById } =
@@ -33,7 +33,7 @@ const Cart = () => {
 
   if (orderId) {
     return (
-      <div className={styles.orderId}>
+      <div className="orderId">
         <h2>Gracias por su compra, lo esperamos pronto!</h2>
         <h4>
           El código de tu comprobante es: {orderId} puedes utilizarlo para realizar tu
@@ -47,7 +47,9 @@ const Cart = () => {
 
   return (
     <div>
-      {!showForm ? (
+      {cart.length === 0 ? (
+        <EmptyCart/>
+      ) : !showForm ? (
         <div className="cart-container">
           <div className="container-items">
             {cart.map((item) => {
