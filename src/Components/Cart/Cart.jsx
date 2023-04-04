@@ -26,7 +26,7 @@ const Cart = () => {
         clearCart();
         Swal.fire("Carrito vaciado exitosamente", "", "success");
       } else if (result.isDenied) {
-        Swal.fire("El carrito queda como estaba", "", "info");
+        Swal.fire("El carrito no se modificó", "", "info");
       }
     });
   };
@@ -36,10 +36,10 @@ const Cart = () => {
       <div className={styles.orderId}>
         <h2>Gracias por su compra, lo esperamos pronto!</h2>
         <h4>
-          El comprobante es : {orderId} puedes utilizarlo para realizar tu
+          El código de tu comprobante es: {orderId} puedes utilizarlo para realizar tu
           seguimiento
         </h4>
-        <img src={"https://res.cloudinary.com/dmugld2v3/image/upload/v1680563195/12dfbc671cd53552dad98da3e5e036dc_udg1b4.jpg"} alt="Thank you" />
+        <img src={"https://res.cloudinary.com/dmugld2v3/image/upload/v1680563195/12dfbc671cd53552dad98da3e5e036dc_udg1b4.jpg"} alt="Gracias por realizar tu compra" />
         <Link to="/">Seguir comprando</Link>
       </div>
     );
