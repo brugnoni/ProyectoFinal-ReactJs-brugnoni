@@ -7,8 +7,7 @@ Para instalación rapida del paquete debemos primero clonar el repositorio desde
 
 Una vez dentro de la carpeta en el editor abrimos la terminal e instalamos el paquete de modulos
 ## npm install
-then
-## cd ./RepoClonado
+
 then
 ## npm start
 
