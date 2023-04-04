@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import { db } from "../../firebaseConfig";
-import { Button, CircularProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
