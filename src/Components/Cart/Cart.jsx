@@ -36,10 +36,15 @@ const Cart = () => {
       <div className="orderId">
         <h2>Gracias por su compra, lo esperamos pronto!</h2>
         <h4>
-          El código de tu comprobante es: {orderId} puedes utilizarlo para realizar tu
-          seguimiento
+          El código de tu comprobante es: {orderId} puedes utilizarlo para
+          realizar tu seguimiento
         </h4>
-        <img src={"https://res.cloudinary.com/dmugld2v3/image/upload/v1680563195/12dfbc671cd53552dad98da3e5e036dc_udg1b4.jpg"} alt="Gracias por realizar tu compra" />
+        <img
+          src={
+            "https://res.cloudinary.com/dmugld2v3/image/upload/v1680563195/12dfbc671cd53552dad98da3e5e036dc_udg1b4.jpg"
+          }
+          alt="Gracias por realizar tu compra"
+        />
         <Link to="/">Seguir comprando</Link>
       </div>
     );
@@ -48,7 +53,7 @@ const Cart = () => {
   return (
     <div>
       {cart.length === 0 ? (
-        <EmptyCart/>
+        <EmptyCart />
       ) : !showForm ? (
         <div className="cart-container">
           <div className="container-items">
@@ -57,12 +62,12 @@ const Cart = () => {
                 <div key={item.id} className="cart-item">
                   <img src={item.img} alt="" />
                   <div className="cart-item-info">
-                    <h2>{item.name}</h2>
-                    <h2>${item.price}.-</h2>
+                    <h2>{item.title}</h2>
+                    <h2>Precio: ${item.price}.-</h2>
                     <h2>Unidades: {item.quantity}</h2>
                     <Button
                       color="secondary"
-                      variant="contained"
+                      variant="contained"                    
                       onClick={() => deleteProductById(item.id)}
                     >
                       Quitar del carrito
@@ -77,10 +82,14 @@ const Cart = () => {
 
             {cart.length > 0 && (
               <div className="btn-cart">
-                <Button variant="contained" onClick={() => setShowForm(true)}>
+                <Button
+                  color="secondary"
+                  variant="contained"
+                  onClick={() => setShowForm(true)}
+                >
                   COMPRAR
                 </Button>
-                <Button onClick={clear} variant="contained">
+                <Button color="secondary" onClick={clear} variant="contained">
                   Vaciar Carrito
                 </Button>
               </div>
